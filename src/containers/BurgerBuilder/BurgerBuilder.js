@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Auxi from '../../hoc/Auxi';
+import Auxi from '../../hoc/Auxi/Auxi';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
@@ -11,9 +11,10 @@ const INGREDIENT_PRICES = {
     cheese: 0.4,
     meat: 1.3,
     bacon: 0.7
-}
+};
 
 class BurgerBuilder extends Component {
+
     /*constructor(props) {
         super(props);
         this.state = {...}
@@ -60,7 +61,7 @@ class BurgerBuilder extends Component {
         const oldCount = this.state.ingredients[type];
         if (oldCount <= 0) {
             return;
-        };
+        }
         const updatedCounted = oldCount - 1;
         const updatedIngredients = {
             ...this.state.ingredients
