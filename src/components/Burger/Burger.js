@@ -1,9 +1,13 @@
 import React from 'react';
+// Logowanie więcej informacji w konsoli
+import { withRouter } from 'react-router-dom';
+
 import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 
 import classes from './Burger.css';
 
 const burger = (props) => {
+    console.log(props);
 
     // Zlozone mapowanie w celu wygenerowania okreslonej ilosc obiektow
     let transformedIngredients = Object.keys(props.ingredients)
@@ -30,4 +34,4 @@ const burger = (props) => {
     );
 };
 
-export default burger;
+export default withRouter(burger);
