@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from './ContactData/ContactData';
 
 class Checkout extends Component {
-    state = {
+
+    /* Unnecessary after redux implementation */
+
+/*    state = {
         ingredients: {
             salad: 1,
             meat: 1,
@@ -13,7 +17,7 @@ class Checkout extends Component {
             bacon: 1
         },
         totalPrice: 0
-    }
+    };
 
     componentWillMount() {
         // Przenoszenie składników po URL
@@ -28,7 +32,7 @@ class Checkout extends Component {
             }
         }
         this.setState({ingredients: ingredients, totalPrice: price})
-    }
+    }*/
 
     checkoutCencelledHandler = () => {
         this.props.history.goBack();
@@ -44,14 +48,21 @@ class Checkout extends Component {
                 <CheckoutSummary
                     checkoutCancel={this.checkoutCencelledHandler}
                     checkoutContiue={this.checkoutContiuedHandler}
-                    ingredients={this.state.ingredients}/>
+                    ingredients={this.props.ings}/>
                 <Route
                     path={this.props.match.path + '/contact-data'}
                     // Ciekawe przeniesienie składników do kontaktu
-                    render={(props) => (<ContactData ingredients={this.state.ingredients} totalPrice={this.state.totalPrice} {...props} />)} />
+                    //render={(props) => (<ContactData ingredients={this.props.ings} totalPrice={this.props.totalPrice} {...props} />)}
+                    component={ContactData} />
             </div>
         )
     }
 }
 
-export default Checkout;
+const mapStateToProps = state => {
+    return {
+        ings: state.ingredients
+    }
+};
+
+export default connect(mapStateToProps)(Checkout);
