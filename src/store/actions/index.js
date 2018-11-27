@@ -5,5 +5,6 @@ export {
 } from './burderBuilder';
 export {
     purchaseBurger,
-    puchaseInit
+    puchaseInit,
+    fetchOrders
 } from './order';
