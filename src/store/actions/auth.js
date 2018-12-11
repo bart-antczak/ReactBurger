@@ -25,11 +25,10 @@ export const authStart = () => {
 };
 
 export const authSuccess = (idToken, userId) => {
-
     return {
         type: actionTypes.AUTH_SUCCESS,
         token: idToken,
-        user: userId
+        userId: userId
     }
 };
 
@@ -58,7 +57,7 @@ export const auth = (email, password, isSignUp) => {
                 const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
                 localStorage.setItem('token', response.data.idToken);
                 localStorage.setItem('expirationDate', expirationDate);
-                localStorage.setItem('userId', response.data.userId);
+                localStorage.setItem('userId', response.data.localId);
                 dispatch(authSuccess(response.data.idToken, response.data.localId));
                 dispatch(checkAuthTimeout(response.data.expiresIn));
             })
