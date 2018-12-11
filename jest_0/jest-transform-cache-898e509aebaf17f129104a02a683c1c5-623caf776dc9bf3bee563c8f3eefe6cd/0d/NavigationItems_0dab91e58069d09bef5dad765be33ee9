@@ -1,0 +1,17 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/home/bart/Pulpit/Dev/reactburger/src/components/Navigation/NavigationItems/NavigationItems.js';
+//import {Link} from 'react-router-dom';
+var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _NavigationItems = require('./NavigationItems.css');var _NavigationItems2 = _interopRequireDefault(_NavigationItems);
+var _NavigationItem = require('./NavigationItem/NavigationItem');var _NavigationItem2 = _interopRequireDefault(_NavigationItem);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+const navigationItems = props =>
+_react2.default.createElement('ul', { className: _NavigationItems2.default.NavigationItems, __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: undefined },
+    _react2.default.createElement(_NavigationItem2.default, { link: '/', active: true, __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: undefined }, 'Burger Builder'),
+    props.isAuthentitacted ? _react2.default.createElement(_NavigationItem2.default, { link: '/orders', __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: undefined }, 'Orders') : null,
+    props.isAuthentitacted ?
+    _react2.default.createElement(_NavigationItem2.default, { link: '/logout', __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: undefined }, 'Logout') :
+    _react2.default.createElement(_NavigationItem2.default, { link: '/auth', __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: undefined }, 'Authenticate'));exports.default =
+
+
+
+navigationItems;

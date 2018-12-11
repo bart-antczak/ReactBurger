@@ -1,0 +1,16 @@
+'use strict';var _jsxFileName = '/home/bart/Pulpit/Dev/reactburger/src/components/Navigation/NavigationItems/NavigationItems.test.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+
+var _enzyme = require('enzyme');
+var _enzymeAdapterReact = require('enzyme-adapter-react-16');var _enzymeAdapterReact2 = _interopRequireDefault(_enzymeAdapterReact);
+
+var _NavigationItems = require('./NavigationItems');var _NavigationItems2 = _interopRequireDefault(_NavigationItems);
+var _NavigationItem = require('./NavigationItem/NavigationItem');var _NavigationItem2 = _interopRequireDefault(_NavigationItem);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+(0, _enzyme.configure)({ adapter: new _enzymeAdapterReact2.default() });
+
+describe('<NavigationItems />', () => {
+    it('should render two <NavigationItem /> elements if not auth', () => {
+        const wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_NavigationItems2.default, { __source: { fileName: _jsxFileName, lineNumber: 13 }, __self: undefined }));
+        expect(wrapper.find(_NavigationItem2.default)).toHaveLength(2);
+    });
+});
