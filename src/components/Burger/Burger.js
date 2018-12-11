@@ -7,7 +7,7 @@ import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 import classes from './Burger.css';
 
 const burger = (props) => {
-    console.log(props);
+    //console.log(props);
 
     // Zlozone mapowanie w celu wygenerowania okreslonej ilosc obiektow
     let transformedIngredients = Object.keys(props.ingredients)

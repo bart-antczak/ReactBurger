@@ -16,7 +16,7 @@ const sideDrawer = (props) => {
     return (
         <Auxi>
             <Backdrop show={props.open} clicked={props.closed} />
-            <div className={attachedClasses.join(' ')}>
+            <div className={attachedClasses.join(' ')} onClick={props.closed}>
                 <div className={classes.SideDrawer}>
                     <div className={classes.Logo}>
                         <Logo />
@@ -28,6 +28,6 @@ const sideDrawer = (props) => {
             </div>
         </Auxi>
     );
-}
+};
 
 export default sideDrawer;
